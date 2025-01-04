@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>我的日常事务</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="user-page">
+    <div class="sidebar">
+        <div class="user-info">
+            <h2>欢迎您, <span id="userDisplayName"></span></h2>
+        </div>
+        <div class="music-player">
+            <audio id="bgMusic" src="D:\桌面\日常事务\wode\frontend\assets\starteaparty.mp3.mp3" loop autoplay></audio>
+            <div class="music-info">
+                <span class="music-title">背景音乐</span>
+                <div class="music-controls">
+                    <button onclick="toggleMusic()" id="musicBtn" class="music-btn">
+                        <span class="music-icon">🎵</span>
+                        <span id="musicStatus">播放音乐</span>
+                    </button>
+                    <input type="range" id="volumeControl" min="0" max="100" value="30" class="volume-slider">
+                </div>
+            </div>
+        </div>
+        <button onclick="showChangePasswordModal()">修改密码</button>
+        <button onclick="logout()">退出登录</button>
+    </div>
+
+    <div class="main-content">
+        <div class="task-header">
+            <h1>我的日常事务</h1>
+            <div class="task-controls">
+                <div class="search-box">
+                    <input type="text" id="searchTask" placeholder="搜索事务..." oninput="searchTasks()">
+                    <span class="search-icon">🔍</span>
+                </div>
+                <div class="task-input">
+                    <div class="task-input-content">
+                        <input type="text" id="taskTitle" placeholder="请输入事务标题..." required>
+                        <button onclick="addTask()">添加事务</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="task-list" id="taskList">
+            <!-- 任务列表将在这里显示 -->
+        </div>
+    </div>
+
+    <div id="changePasswordModal" class="modal">
+        <div class="modal-content">
+            <h2>修改密码</h2>
+            <input type="password" id="oldPassword" placeholder="请输入当前密码" required>
+            <input type="password" id="newPassword" placeholder="请输入新密码" required>
+            <input type="password" id="confirmNewPassword" placeholder="请确认新密码" required>
+            <div class="modal-buttons">
+                <button onclick="changePassword()">确认修改</button>
+                <button class="secondary" onclick="closeModal()">取消</button>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html> 

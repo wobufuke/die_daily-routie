@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>用户管理 - 管理员系统</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="admin-page">
+    <button onclick="logout()" class="admin-logout">退出登录</button>
+    
+    <div class="admin-header">
+        <h1>用户管理系统</h1>
+        <div class="admin-search">
+            <input type="text" id="searchUser" placeholder="搜索用户..." onkeypress="handleSearchKeyPress(event)">
+            <button onclick="searchUsers()" class="search-btn">
+                <span class="search-icon">🔍</span>
+                搜索
+            </button>
+        </div>
+    </div>
+
+    <div class="user-list-container">
+        <table class="user-table">
+            <thead>
+                <tr>
+                    <th>用户名</th>
+                    <th>创建时间</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody id="userList">
+                <!-- 用户数据将通过JavaScript动态添加 -->
+            </tbody>
+        </table>
+    </div>
+</body>
+<script src="js/main.js"></script>
+</html> 
